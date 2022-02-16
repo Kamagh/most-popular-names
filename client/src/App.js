@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 
 import List from "./components/UsersList.js";
 import MostPopularName from "./components/MostPopularName";
+import MostPopularNameInCentury from "./components/MostPopularNameinCentury";
 
 function App() {
     const [show, setShow] = useState(false);
@@ -15,10 +16,11 @@ function App() {
             {
                 show ? <List/> : null
             }
-            <button onClick={() => setShowPopular(!showPopular)}>List of people</button>
+            <button onClick={() => setShowPopular(!showPopular)}>Most popular name</button>
             {
                 showPopular ? <MostPopularName/> : null
             }
+           {/* <MostPopularNameInCentury/>*/}
         </div>
     )
 }

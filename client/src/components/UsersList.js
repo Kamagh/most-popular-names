@@ -7,9 +7,8 @@ const UsersList = () => {
         const fetchData = async () => {
             const data = await fetch("http://localhost:1000/api/names/");
             const json = await data.json();
-            console.log(json)
             const namesList = json.response.map(person => person.full_name)
-            setData(JSON.stringify(namesList))
+            setData(namesList);
         }
 
         fetchData().catch(console.error)
@@ -25,7 +24,7 @@ const UsersList = () => {
     }, [])
     return (
         <>
-            <p>{!data ? "Loading..." : data}</p>
+            {!data ? "Loading..." : data.map(el => <p>{el}</p>)}
         </>
     );
 };
